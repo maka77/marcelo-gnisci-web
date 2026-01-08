@@ -1,10 +1,12 @@
 :root {
-  --bg-color: #FDFBF7;
-  --text-main: #2D2D2D;
-  --text-muted: #666666;
-  --accent-color: #8C8C8C;
-  --font-heading: 'Playfair Display', serif;
-  --font-body: 'Lora', serif; /* Changed default to Lora for that "book" feel */
+  --bg-color: #121212;
+  --surface-color: #1E1E1E;
+  --text-main: #EDEDED;
+  --text-muted: #A0A0A0;
+  --accent-color: #404040;
+  --border-color: #333333;
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
 }
 
 * {
@@ -43,6 +45,9 @@ body {
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1.8rem;
 }
 
 /* Bio Section */
@@ -56,17 +61,20 @@ body {
 }
 
 .bio-image-wrapper {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  filter: grayscale(100%); /* Elegant B&W look for the photo */
-  transition: filter 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+  border: 2px solid var(--border-color);
 }
 
 .bio-image-wrapper:hover {
   filter: grayscale(0%);
+  transform: scale(1.02);
+  border-color: var(--text-muted);
 }
 
 .bio-image {
@@ -80,15 +88,17 @@ body {
 }
 
 .lead-text {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   margin-bottom: 1.5rem;
-  font-weight: 500;
+  font-weight: 300;
+  letter-spacing: 0.01em;
 }
 
 .sub-text {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
-  font-style: italic;
+  font-style: normal;
+  font-weight: 300;
 }
 
 /* Stories Section */
@@ -98,48 +108,55 @@ body {
 
 .section-title {
   font-family: var(--font-heading);
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 2rem;
   text-align: center;
   position: relative;
   display: inline-block;
   width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
 }
 
 .section-title::after {
   content: "";
   display: block;
-  width: 40px;
-  height: 1px;
+  width: 30px;
+  height: 2px;
   background-color: var(--accent-color);
   margin: 1rem auto 0;
 }
 
 .stories-list {
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .story-preview {
   padding: 2rem;
-  border: 1px solid rgba(0,0,0,0.05);
-  background: #fff;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid var(--border-color);
+  background: var(--surface-color);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  border-radius: 4px;
 }
 
 .story-preview:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  border-color: var(--text-muted);
 }
 
 .story-title {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
 }
 
 .story-excerpt {
   color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 300;
 }
 
 /* Footer */
@@ -147,15 +164,17 @@ body {
   margin-top: 5rem;
   text-align: center;
   padding: 2rem 0;
-  border-top: 1px solid rgba(0,0,0,0.05);
-  font-size: 0.9rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.8rem;
   color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* Responsive */
 @media (min-width: 768px) {
   .logo {
-    font-size: 3.5rem;
+    font-size: 2.2rem;
   }
 
   .bio {
@@ -166,12 +185,12 @@ body {
   }
 
   .bio-image-wrapper {
-    width: 280px;
-    height: 280px;
+    width: 240px;
+    height: 240px;
     flex-shrink: 0;
   }
 
   .lead-text {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
   }
 }
