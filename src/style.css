@@ -1,0 +1,177 @@
+:root {
+  --bg-color: #FDFBF7;
+  --text-main: #2D2D2D;
+  --text-muted: #666666;
+  --accent-color: #8C8C8C;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Lora', serif; /* Changed default to Lora for that "book" feel */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding-top: 2rem;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+}
+
+/* Bio Section */
+.bio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.bio-image-wrapper {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  filter: grayscale(100%); /* Elegant B&W look for the photo */
+  transition: filter 0.3s ease;
+}
+
+.bio-image-wrapper:hover {
+  filter: grayscale(0%);
+}
+
+.bio-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bio-content {
+  max-width: 600px;
+}
+
+.lead-text {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.sub-text {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Stories Section */
+.stories-section {
+  flex: 1;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 1px;
+  background-color: var(--accent-color);
+  margin: 1rem auto 0;
+}
+
+.stories-list {
+  display: grid;
+  gap: 2rem;
+}
+
+.story-preview {
+  padding: 2rem;
+  border: 1px solid rgba(0,0,0,0.05);
+  background: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.story-preview:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.story-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.story-excerpt {
+  color: var(--text-muted);
+}
+
+/* Footer */
+.footer {
+  margin-top: 5rem;
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .logo {
+    font-size: 3.5rem;
+  }
+
+  .bio {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .bio-image-wrapper {
+    width: 280px;
+    height: 280px;
+    flex-shrink: 0;
+  }
+
+  .lead-text {
+    font-size: 1.4rem;
+  }
+}
