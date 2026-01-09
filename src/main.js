@@ -14,12 +14,14 @@ if (counterDisplay) {
     fetch(`https://api.countapi.xyz/hit/${NAMESPACE}/${KEY}`)
         .then(res => res.json())
         .then(data => {
-            counterDisplay.innerText = data.value.toString().padStart(5, '0');
+            // Start at 77
+            const count = data.value + 77;
+            counterDisplay.innerText = count.toString().padStart(5, '0');
         })
         .catch(err => {
             console.warn('Counter API failed, using local fallback', err);
             // Fallback: Simulate a count based on local storage or random start
-            let count = localStorage.getItem('local_visit_count') || 1024;
+            let count = localStorage.getItem('local_visit_count') || 77;
             count = parseInt(count) + 1;
             localStorage.setItem('local_visit_count', count);
             counterDisplay.innerText = count.toString().padStart(5, '0');
