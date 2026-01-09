@@ -9,6 +9,7 @@ export default defineConfig({
                 main: resolve(__dirname, 'index.html'),
                 miradas: resolve(__dirname, 'miradas-complices.html'),
                 roma: resolve(__dirname, 'cuando-roma-me-llevo-al-mar.html'),
+                silencios: resolve(__dirname, 'cuando-los-silencios-tambien-hablan.html'),
             },
         },
     },
