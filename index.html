@@ -9,14 +9,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&family=VT323&display=swap"
     rel="stylesheet">
 </head>
 
 <body>
   <div id="app">
     <header class="header">
-      <h1 class="logo">Marcelo Gnisci</h1>
+      <a href="/" style="text-decoration: none;">
+        <h1 class="logo">Marcelo Gnisci</h1>
+      </a>
     </header>
 
     <main class="container">
@@ -73,6 +75,10 @@
     </main>
 
     <footer class="footer">
+      <div class="visitor-counter">
+        <div class="counter-label">ERES NUESTRO VISITANTE No:</div>
+        <div class="counter-display" id="visit-count">00000</div>
+      </div>
       <p>&copy; 2026 Marcelo Gnisci. Todos los derechos reservados.</p>
     </footer>
   </div>

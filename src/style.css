@@ -222,6 +222,40 @@ body {
   font-weight: 300;
 }
 
+/* Visitor Counter */
+.visitor-counter {
+  background-color: #000;
+  border: 4px solid #333;
+  display: inline-block;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.counter-label {
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.counter-display {
+  font-family: 'VT323', monospace;
+  font-size: 3.5rem;
+  color: #ff0000;
+  line-height: 1;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5);
+  letter-spacing: 0.1em;
+  background: #111;
+  padding: 0.2rem 1rem;
+  border-radius: 2px;
+  border: 1px solid #222;
+}
+
 .story-footer {
   margin-top: 4rem;
   text-align: center;
