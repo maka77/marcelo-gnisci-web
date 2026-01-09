@@ -8,6 +8,7 @@ export default defineConfig({
             input: {
                 main: resolve(__dirname, 'index.html'),
                 miradas: resolve(__dirname, 'miradas-complices.html'),
+                roma: resolve(__dirname, 'cuando-roma-me-llevo-al-mar.html'),
             },
         },
     },
