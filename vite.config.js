@@ -7,10 +7,8 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 main: resolve(__dirname, 'index.html'),
-                miradas: resolve(__dirname, 'miradas-complices.html'),
-                roma: resolve(__dirname, 'cuando-roma-me-llevo-al-mar.html'),
-                silencios: resolve(__dirname, 'cuando-los-silencios-tambien-hablan.html'),
-                negro: resolve(__dirname, 'negro-metal-roma.html'),
+                story: resolve(__dirname, 'story.html'),
+                admin: resolve(__dirname, 'admin.html'),
             },
         },
     },

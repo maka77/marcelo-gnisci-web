@@ -1,0 +1,24 @@
+{
+  "rewrites": [
+    {
+      "source": "/negro-metal-roma.html",
+      "destination": "/story.html?slug=negro-metal-roma"
+    },
+    {
+      "source": "/cuando-los-silencios-tambien-hablan.html",
+      "destination": "/story.html?slug=cuando-los-silencios-tambien-hablan"
+    },
+    {
+      "source": "/cuando-roma-me-llevo-al-mar.html",
+      "destination": "/story.html?slug=cuando-roma-me-llevo-al-mar"
+    },
+    {
+      "source": "/miradas-complices.html",
+      "destination": "/story.html?slug=miradas-complices"
+    },
+    {
+      "source": "/admin",
+      "destination": "/admin.html"
+    }
+  ]
+}

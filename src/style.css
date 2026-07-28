@@ -324,3 +324,70 @@ body {
     font-size: 1.25rem;
   }
 }
+
+/* Loading Skeleton */
+.story-skeleton {
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  background: var(--surface-color);
+  border-radius: 4px;
+}
+
+.skeleton-title,
+.skeleton-text,
+.skeleton-btn {
+  background: linear-gradient(90deg, var(--border-color) 25%, var(--surface-color) 50%, var(--border-color) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+.skeleton-title {
+  height: 1.3rem;
+  width: 60%;
+  margin-bottom: 0.75rem;
+}
+
+.skeleton-text {
+  height: 0.9rem;
+  width: 90%;
+  margin-bottom: 1.5rem;
+}
+
+.skeleton-btn {
+  height: 2rem;
+  width: 120px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Dynamic Content States */
+.story-loading {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 4rem 0;
+  font-size: 0.95rem;
+  font-weight: 300;
+}
+
+.story-not-found {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.story-not-found p {
+  color: var(--text-muted);
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.empty-text {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 3rem;
+  font-style: italic;
+  font-weight: 300;
+}
