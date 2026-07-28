@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novedades | Marcelo Gnisci</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      margin: 2cm;
+      size: A4;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: #1a1a1a;
+      line-height: 1.7;
+      font-size: 14px;
+      background: #fff;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    /* Cover */
+    .cover {
+      text-align: center;
+      padding: 4rem 0 3rem;
+      border-bottom: 3px solid #121212;
+      margin-bottom: 3rem;
+    }
+
+    .cover-logo {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #121212;
+      margin-bottom: 0.5rem;
+    }
+
+    .cover-url {
+      font-size: 0.9rem;
+      color: #666;
+      letter-spacing: 0.05em;
+      margin-bottom: 2.5rem;
+    }
+
+    .cover-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .cover-subtitle {
+      font-size: 1rem;
+      color: #888;
+      font-weight: 300;
+    }
+
+    .cover-date {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+
+    /* Sections */
+    h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #121212;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #eee;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #333;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      margin-bottom: 0.8rem;
+      color: #444;
+    }
+
+    strong {
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+
+    /* Credential box */
+    .credential-box {
+      background: #f7f7f7;
+      border: 1px solid #e0e0e0;
+      border-left: 4px solid #121212;
+      border-radius: 4px;
+      padding: 1.25rem 1.5rem;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .credential-box .label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #888;
+      margin-bottom: 0.2rem;
+    }
+
+    .credential-box .value {
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #121212;
+      margin-bottom: 0.8rem;
+      font-family: 'Courier New', monospace;
+    }
+
+    .credential-box .value:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Steps */
+    .steps {
+      counter-reset: step-counter;
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+
+    .steps li {
+      counter-increment: step-counter;
+      padding: 0.8rem 0 0.8rem 3.5rem;
+      position: relative;
+      border-bottom: 1px solid #f0f0f0;
+      color: #444;
+    }
+
+    .steps li:last-child {
+      border-bottom: none;
+    }
+
+    .steps li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0.7rem;
+      width: 2.2rem;
+      height: 2.2rem;
+      background: #121212;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .steps li strong {
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    /* URL table */
+    .url-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+    }
+
+    .url-table th {
+      background: #121212;
+      color: #fff;
+      text-align: left;
+      padding: 0.7rem 1rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 500;
+    }
+
+    .url-table td {
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid #eee;
+      font-size: 0.9rem;
+    }
+
+    .url-table tr:nth-child(even) td {
+      background: #fafafa;
+    }
+
+    .url-table code {
+      background: #f0f0f0;
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.85rem;
+      color: #333;
+    }
+
+    /* Feature list */
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+
+    .feature-list li {
+      padding: 0.5rem 0 0.5rem 1.8rem;
+      position: relative;
+      color: #444;
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #2ed573;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    /* Info box */
+    .info-box {
+      background: #f0f7ff;
+      border: 1px solid #d0e3f7;
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+      color: #2a5a8a;
+    }
+
+    .info-box strong {
+      color: #1a4a7a;
+    }
+
+    .warning-box {
+      background: #fff8f0;
+      border: 1px solid #f0d8b8;
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+      color: #8a5a2a;
+    }
+
+    .warning-box strong {
+      color: #7a4a1a;
+    }
+
+    /* Divider */
+    hr {
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 2rem 0;
+    }
+
+    /* Footer */
+    .doc-footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid #eee;
+      text-align: center;
+      color: #aaa;
+      font-size: 0.8rem;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        padding: 0;
+        font-size: 12px;
+      }
+      .cover {
+        padding: 2rem 0;
+      }
+      h2 {
+        break-after: avoid;
+      }
+      .steps li, .feature-list li {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-logo">Marcelo Gnisci</div>
+    <div class="cover-url">marcelognisci.com</div>
+    <div class="cover-title">Guía del Portal de Administración</div>
+    <div class="cover-subtitle">Cómo publicar nuevos relatos desde tu navegador</div>
+    <div class="cover-date">Julio 2026</div>
+  </div>
+
+  <!-- QUÉ SE HIZO -->
+  <h2>¿Qué se hizo en el sitio?</h2>
+  <p>Tu sitio web fue actualizado para que puedas <strong>publicar nuevos relatos directamente desde el navegador</strong>, sin necesidad de tocar código, archivos ni hacer nada técnico.</p>
+  <p>Los relatos y sus imágenes ahora viven en una base de datos en la nube (Supabase), y se muestran automáticamente en tu página cuando los publicás.</p>
+
+  <h3>Cambios principales</h3>
+  <ul class="feature-list">
+    <li>Nuevo <strong>portal de administración</strong> protegido con usuario y contraseña</li>
+    <li>Editor de relatos con <strong>vista previa en tiempo real</strong> (ves cómo queda mientras escribís)</li>
+    <li>Subida de <strong>imágenes</strong> para acompañar cada relato</li>
+    <li>Los relatos publicados aparecen <strong>al instante</strong> en la página principal</li>
+    <li>Podés <strong>editar o eliminar</strong> relatos existentes en cualquier momento</li>
+    <li>Opción de guardar relatos como <strong>borrador</strong> (sin publicar) para terminarlos después</li>
+    <li>Los 4 relatos originales fueron migrados a la nueva plataforma</li>
+    <li>Las URLs anteriores siguen funcionando (redirigen automáticamente)</li>
+  </ul>
+
+  <hr>
+
+  <!-- ACCESO -->
+  <h2>Acceso al Portal</h2>
+
+  <table class="url-table">
+    <thead>
+      <tr>
+        <th>Página</th>
+        <th>Dirección</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Tu sitio web</strong> (lo que ven los visitantes)</td>
+        <td><code>marcelognisci.com</code></td>
+      </tr>
+      <tr>
+        <td><strong>Panel de administración</strong></td>
+        <td><code>marcelognisci.com/admin</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="info-box">
+    <strong>🔒 Acceso restringido:</strong> Las credenciales de acceso al panel de administración se entregan de forma privada al autor.
+  </div>
+
+  <hr>
+
+  <!-- CÓMO PUBLICAR -->
+  <h2>Cómo publicar un nuevo relato</h2>
+
+  <ol class="steps">
+    <li>
+      <strong>Ingresá al portal</strong>
+      Abrí tu navegador y andá a <code>marcelognisci.com/admin</code>. Ingresá tu email y contraseña.
+    </li>
+    <li>
+      <strong>Hacé click en "+ Nuevo Relato"</strong>
+      Se abre el editor con dos paneles: a la izquierda el formulario, a la derecha la vista previa.
+    </li>
+    <li>
+      <strong>Escribí el título</strong>
+      El título del relato. Ejemplo: <em>"Cuando el viento habla"</em>
+    </li>
+    <li>
+      <strong>Escribí el contenido</strong>
+      Escribí tu relato en el campo de texto. Cada vez que presiones <strong>Enter</strong>, se crea un párrafo nuevo. En la vista previa (derecha) vas a ver cómo queda formateado, exactamente igual que tus otros relatos.
+    </li>
+    <li>
+      <strong>Subí una imagen (opcional)</strong>
+      Hacé click en el área de imagen o arrastrá una foto desde tu computadora. Se va a mostrar arriba del relato, como en tus otros textos. Formatos aceptados: JPG, PNG o WebP.
+    </li>
+    <li>
+      <strong>Completá el extracto</strong>
+      Es el texto corto que aparece en la página principal, debajo del título. Si lo dejás vacío, se usa automáticamente la primera línea del relato.
+    </li>
+    <li>
+      <strong>Revisá la firma</strong>
+      Por defecto dice <em>"Marcelo Gnisci, [mes actual] [año]."</em> Podés cambiarla si querés.
+    </li>
+    <li>
+      <strong>Publicá</strong>
+      Asegurate de que la opción <strong>"Publicar en el sitio"</strong> esté tildada, y hacé click en <strong>"Publicar relato"</strong>. ¡Listo! El relato ya está visible para todos los visitantes.
+    </li>
+  </ol>
+
+  <div class="info-box">
+    <strong>💡 Tip:</strong> Si querés escribir un relato pero no publicarlo todavía, destildá la opción "Publicar en el sitio". El relato se guarda como borrador y lo podés publicar cuando quieras editándolo después.
+  </div>
+
+  <hr>
+
+  <!-- EDITAR / ELIMINAR -->
+  <h2>Cómo editar o eliminar un relato</h2>
+
+  <h3>Editar</h3>
+  <ol class="steps">
+    <li>
+      <strong>Ingresá al portal</strong>
+      Andá a <code>marcelognisci.com/admin</code> e ingresá tus credenciales.
+    </li>
+    <li>
+      <strong>Buscá el relato en la lista</strong>
+      Vas a ver todos tus relatos con su estado (publicado o borrador) y fecha.
+    </li>
+    <li>
+      <strong>Hacé click en el ícono de lápiz ✏️</strong>
+      Se abre el editor con el contenido actual del relato.
+    </li>
+    <li>
+      <strong>Modificá lo que necesites y guardá</strong>
+      Podés cambiar el título, texto, imagen, o cualquier campo. Los cambios se aplican al instante.
+    </li>
+  </ol>
+
+  <h3>Eliminar</h3>
+  <p>Hacé click en el ícono de papelera 🗑️ junto al relato. Se te va a pedir confirmación antes de eliminarlo. <strong>Esta acción no se puede deshacer.</strong></p>
+
+  <h3>Ver un relato</h3>
+  <p>Hacé click en el ícono de ojo 👁 para abrir el relato en una nueva pestaña, tal como lo ven los visitantes.</p>
+
+  <hr>
+
+  <!-- FAQ -->
+  <h2>Preguntas frecuentes</h2>
+
+  <h3>¿Desde qué dispositivo puedo publicar?</h3>
+  <p>Desde cualquier dispositivo con navegador: computadora, celular o tablet. Solo necesitás internet y tus credenciales.</p>
+
+  <h3>¿Cuánto tarda en aparecer un relato publicado?</h3>
+  <p><strong>Es instantáneo.</strong> En el momento que hacés click en "Publicar", el relato ya está visible en tu sitio para todos.</p>
+
+  <h3>¿Hay límite de relatos o imágenes?</h3>
+  <p>No para uso normal. El plan gratuito de la base de datos permite miles de relatos y hasta 1 GB de imágenes.</p>
+
+  <h3>¿Qué pasa si tengo problemas de acceso?</h3>
+  <p>Contactá al administrador técnico del sitio para recibir asistencia.</p>
+
+  <h3>¿Puedo cambiar el orden de los relatos?</h3>
+  <p>Los relatos se muestran del más reciente al más antiguo, automáticamente.</p>
+
+  <hr>
+
+  <!-- RESUMEN TÉCNICO -->
+  <h2>Resumen técnico (para referencia)</h2>
+
+  <table class="url-table">
+    <thead>
+      <tr>
+        <th>Componente</th>
+        <th>Detalle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Hosting</td>
+        <td>Vercel</td>
+      </tr>
+      <tr>
+        <td>Base de datos e imágenes</td>
+        <td>Supabase (plan gratuito)</td>
+      </tr>
+      <tr>
+        <td>Dominio</td>
+        <td>marcelognisci.com</td>
+      </tr>
+      <tr>
+        <td>Repositorio de código</td>
+        <td>github.com/maka77/marcelo-gnisci-web</td>
+      </tr>
+      <tr>
+        <td>Framework</td>
+        <td>Vite (HTML + JavaScript)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    <p>Documento generado el 27 de julio de 2026</p>
+    <p>marcelognisci.com</p>
+  </div>
+
+</body>
+</html>

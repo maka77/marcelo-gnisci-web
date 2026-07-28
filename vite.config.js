@@ -9,6 +9,7 @@ export default defineConfig({
                 main: resolve(__dirname, 'index.html'),
                 story: resolve(__dirname, 'story.html'),
                 admin: resolve(__dirname, 'admin.html'),
+                novedades: resolve(__dirname, 'novedades.html'),
             },
         },
     },
